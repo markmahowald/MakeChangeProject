@@ -7,10 +7,10 @@ public class MakeChangeApp {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 		MakeChangeDriver reg = new MakeChangeDriver();
+		
 
 		double price, money, changeDue;
-		int hundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, one = 0, quarter = 0, dime = 0, nickle = 0, cent = 0,
-				diff = 0;
+		int hundred = 0, fifty = 0, twenty = 0, ten = 0, five = 0, one = 0, quarter = 0, dime = 0, nickle = 0, cent = 0, diff = 0;
 
 		System.out.println("Hello. What is the price of the customer's item?");
 		price = kb.nextDouble();
@@ -32,31 +32,64 @@ public class MakeChangeApp {
 			while (diff > 1) {
 
 				if (diff >= 10000) {
-					hundred = reg.change(diff, 100);
-					diff = reg.remainder(diff, 100);
+					hundred = reg.change(diff, 10000);
+					diff = reg.remainder(diff, 10000);
 				}
 				if (diff >= 5000) {
-					fifty = reg.change(diff, 50);
-					diff = reg.remainder(diff, 50);
+					fifty = reg.change(diff, 5000);
+					diff = reg.remainder(diff, 5000);
 				}
 				if (diff >= 2000) {
-					twenty = reg.change(diff, 20);
-					diff = reg.remainder(diff, 20);
+					twenty = reg.change(diff, 2000);
+					diff = reg.remainder(diff, 2000);
 				}
 				if (diff >= 1000) {
-					five = reg.change(diff, 10);
-					diff = reg.remainder(diff, 10);
+					ten = reg.change(diff, 1000);
+					diff = reg.remainder(diff, 1000);
+				}
+				if (diff >= 500) {
+					five = reg.change(diff, 500);
+					diff = reg.remainder(diff, 500);
 				}
 				if (diff >= 100) {
-					one = reg.change(diff, 5);
+					one = reg.change(diff, 100);
+					diff = reg.remainder(diff, 100);
+				}
+				if (diff >= 25) {
+					quarter = reg.change(diff, 25);
+					diff = reg.remainder(diff, 25);
+				}
+				if (diff >= 10) {
+					dime = reg.change(diff, 10);
+					diff = reg.remainder(diff, 10);
+				}
+				if (diff >= 5) {
+					nickle = reg.change(diff, 5);
 					diff = reg.remainder(diff, 5);
+				}
+				if (diff >= 1) {
+					cent = reg.change(diff, 1);
+					diff = reg.remainder(diff, 1);
 				}
 
 			}
+			System.out.println("The customer's change is: ");
+			System.out.println(hundred + "hundreds");
+			System.out.println(fifty + "fifties");
+			System.out.println(twenty + "twenties");
+			System.out.println(ten + "tens");
+			System.out.println(five + "fives");
+			System.out.println(one + "ones");
+			System.out.println(quarter + "quarters");
+			System.out.println(dime + "dimes");
+			System.out.println(nickle + "nickles");
+			System.out.println(cent + "pennies");
 
 		}
 //			if (diff>=0.25) {
 	}
+	
+	
 	// TODO - figure this part out....
 }
 
