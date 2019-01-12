@@ -47,7 +47,7 @@ public class MakeChangeDriver {
 		System.out.println(change[7] + " dimes");
 	}
 	if(change[8]>0) {
-		System.out.println(change[8] + " nickles");
+		System.out.println(change[8] + " nickels");
 	}
 	if(change[9]>0) {
 		System.out.println(change[9] + " pennies");
