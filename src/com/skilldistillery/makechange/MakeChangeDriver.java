@@ -9,15 +9,15 @@ public class MakeChangeDriver {
 			return false;
 		
 	}
-	public int change(int diff, int size){
-		int bills = diff/size;
+	public int change(double diff, int size){
+		int bills =  ((int)diff)/size;
 		return bills;
 		
 				
 	}
 	
-	public int remainder(int diff, int size) {
-		int remainder = diff%size;
+	public int remainder(double diff, int size) {
+		int remainder = ((int)diff)%size;
 		return remainder;		//TODO - modulus the remainder.
 	}
 
